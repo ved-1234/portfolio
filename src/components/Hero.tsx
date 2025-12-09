@@ -75,7 +75,7 @@ export default function Hero() {
             <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
               <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-full blur-2xl opacity-20 animate-pulse"></div>
               <div className="relative w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 rounded-full flex items-center justify-center text-8xl font-bold text-orange-500 border-4 border-orange-500/30">
-                V
+                <img src="/ved_image.jpg" alt="Ved Chaudhari" className="rounded-full w-full h-full object-cover" />
               </div>
             </div>
           </div>
