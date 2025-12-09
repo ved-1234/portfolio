@@ -59,7 +59,7 @@ export default function About() {
 
             <div className="pt-4">
               <a
-                href="https://github.com/ved-1234/"
+                href="https://europa.eu/europass/eportfolio/api/eprofile/shared-profile/ved-chaudhari/508b5fa7-baae-4756-8a16-c4f682b9ca54?view=html"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-8 py-3 bg-orange-500 hover:bg-orange-600 text-black font-semibold rounded-full transition-all duration-300 transform hover:scale-105"

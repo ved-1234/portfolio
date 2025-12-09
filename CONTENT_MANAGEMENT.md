@@ -99,11 +99,12 @@ INSERT INTO certifications (
   description,
   display_order
 ) VALUES (
-  'AWS Solutions Architect',
-  'Amazon Web Services',
+  '
+Exploratory data analysis for machine learning',
+  'IBM',
   '2024-06-15',
-  'https://aws.amazon.com/verification/ABC123',
-  'Professional certification for designing distributed systems on AWS',
+  'https://drive.google.com/file/d/1Prm0YsZWSyh4bFaQhJK4Y1p7w7ux4939/view?usp=drive_link',
+  'Professional certification for exploratory data analysis',
   1
 );
 ```

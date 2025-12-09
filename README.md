@@ -79,7 +79,7 @@ VALUES ('Docker', 85, 'Tools', 13);
 ```sql
 INSERT INTO certifications (title, issuer, issue_date, credential_url, display_order)
 VALUES (
-  'Advanced React Development',
+  '',
   'Meta',
   '2024-03-15',
   'https://coursera.org/verify/example',
