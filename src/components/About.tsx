@@ -23,9 +23,9 @@ export default function About() {
 
           <div className="space-y-6">
             <p className="text-gray-300 text-lg leading-relaxed">
-              I'm Ved Chaudhari, a passionate developer currently in my final year of Computer
-              Engineering. I specialize in building modern web applications and exploring the
-              fascinating world of artificial intelligence and machine learning.
+             I'm Ved Chaudhari, a passionate developer and a Computer Engineering graduate with a strong interest in building scalable software and solving real-world problems through technology.
+             I specialize in building modern web applications and exploring the
+             fascinating world of artificial intelligence and machine learning.
             </p>
 
             <p className="text-gray-300 text-lg leading-relaxed">
@@ -39,7 +39,7 @@ export default function About() {
                 <GraduationCap className="text-orange-500 mb-4" size={32} />
                 <h3 className="text-white font-bold text-lg mb-2">Education</h3>
                 <p className="text-gray-400 text-sm">BE Computer Science</p>
-                <p className="text-orange-500 text-sm font-semibold">CGPA: 7.04</p>
+                <p className="text-orange-500 text-sm font-semibold">CGPA: 7.18</p>
               </div>
 
               <div className="bg-gray-900/50 p-6 rounded-xl border border-gray-800 hover:border-orange-500 transition-all duration-300">
@@ -59,7 +59,7 @@ export default function About() {
 
             <div className="pt-4">
               <a
-                href="https://europa.eu/europass/eportfolio/api/eprofile/shared-profile/ved-chaudhari/508b5fa7-baae-4756-8a16-c4f682b9ca54?view=html"
+                href="https://drive.google.com/drive/folders/1QEQZc4Csx_uNESByeiDSXPN-GH6vMil6?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-8 py-3 bg-orange-500 hover:bg-orange-600 text-black font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
