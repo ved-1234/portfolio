@@ -25,7 +25,7 @@ export default function Projects() {
 
   const fetchProjects = async () => {
     try {
-      const res = await fetch("https://portfolio-backend-ynnm.onrender.com/api/projects");
+      const res = await fetch("https://portfolio-1-05bk.onrender.com/api/projects");
 
       if (!res.ok) {
         throw new Error("Failed to fetch projects");

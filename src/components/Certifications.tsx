@@ -14,7 +14,7 @@ export default function Certifications() {
   const [certifications, setCertifications] = useState<Certification[]>([])
 
   useEffect(() => {
-    fetch("https://portfolio-backend-ynnm.onrender.com/api/certifications")
+    fetch("https://portfolio-1-05bk.onrender.com/api/certifications")
       .then(res => res.json())
       .then(data => setCertifications(data))
   }, [])
