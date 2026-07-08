@@ -26,8 +26,7 @@ export default function Hero() {
             </div>
 
             <p className="text-gray-400 text-base md:text-lg max-w-xl">
-              Final Year BE in Computer Science student passionate about building innovative
-              web applications and exploring artificial intelligence solutions.
+              Computer Science graduate with a strong interest in full-stack web development and artificial intelligence. Passionate about building innovative, user-centric applications and continuously learning new technologies.
             </p>
 
             <div className="flex flex-wrap gap-4">
