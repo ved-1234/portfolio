@@ -7,20 +7,25 @@ import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import Loader from './components/Loader';
 
 function App() {
   return (
-    <div className="min-h-screen bg-black">
-      <Navigation />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Certifications />
-      <Contact />
-      <Footer />
-      <ScrollToTop />
-    </div>
+    <>
+      <Loader />
+
+      <div className="min-h-screen bg-black">
+        <Navigation />
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Certifications />
+        <Contact />
+        <Footer />
+        <ScrollToTop />
+      </div>
+    </>
   );
 }
 
