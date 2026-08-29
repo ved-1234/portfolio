@@ -12,7 +12,13 @@ interface Project {
   category?: string;
 }
 
-export default function Projects() {
+interface ProjectsProps {
+  onLoaded?: () => void;
+}
+
+export default function Projects({
+  onLoaded,
+}: ProjectsProps) {
 
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
@@ -25,7 +31,9 @@ export default function Projects() {
 
   const fetchProjects = async () => {
     try {
-      const res = await fetch("https://portfolio-1-05bk.onrender.com/api/projects");
+      const res = await fetch(
+        "https://portfolio-1-05bk.onrender.com/api/projects"
+      );
 
       if (!res.ok) {
         throw new Error("Failed to fetch projects");
@@ -33,31 +41,48 @@ export default function Projects() {
 
       const data = await res.json();
 
-      console.log("Projects from backend:", data); // DEBUG
+      console.log("Projects from backend:", data);
 
       setProjects(data);
 
     } catch (err: any) {
+
       setError(err.message);
-      console.error(err);
+
+      console.error("Projects API error:", err);
+
     } finally {
+
       setLoading(false);
+
+      // Tell App that Projects API has finished
+      onLoaded?.();
     }
   };
 
   // Categories
   const categories = [
     "All",
-    ...Array.from(new Set(projects.map(p => p.category || "Other")))
+    ...Array.from(
+      new Set(
+        projects.map(
+          (p) => p.category || "Other"
+        )
+      )
+    ),
   ];
 
   // Filter projects
   const filteredProjects =
     selectedCategory === "All"
       ? projects
-      : projects.filter(p => (p.category || "Other") === selectedCategory);
+      : projects.filter(
+          (p) =>
+            (p.category || "Other") ===
+            selectedCategory
+        );
 
-  // Loading state
+  // Local loading state
   if (loading) {
     return (
       <section className="min-h-screen flex justify-center items-center bg-gray-950 text-white">
@@ -82,18 +107,27 @@ export default function Projects() {
 
         {/* Heading */}
         <h2 className="text-4xl font-bold text-center mb-10">
-          My <span className="text-orange-500">Projects</span>
+          My{" "}
+          <span className="text-orange-500">
+            Projects
+          </span>
         </h2>
 
         {/* Category Filter */}
         <div className="flex justify-center flex-wrap gap-3 mb-10">
 
-          <Filter className="text-orange-500 mt-2" size={20} />
+          <Filter
+            className="text-orange-500 mt-2"
+            size={20}
+          />
 
-          {categories.map(category => (
+          {categories.map((category) => (
+
             <button
               key={category}
-              onClick={() => setSelectedCategory(category)}
+              onClick={() =>
+                setSelectedCategory(category)
+              }
               className={`px-5 py-2 rounded-full ${
                 selectedCategory === category
                   ? "bg-orange-500 text-black"
@@ -102,19 +136,23 @@ export default function Projects() {
             >
               {category}
             </button>
+
           ))}
 
         </div>
 
         {/* Projects Grid */}
         {filteredProjects.length === 0 ? (
+
           <p className="text-center text-gray-400">
             No projects found.
           </p>
+
         ) : (
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            {filteredProjects.map(project => (
+            {filteredProjects.map((project) => (
 
               <div
                 key={project._id}
@@ -132,19 +170,24 @@ export default function Projects() {
                 {/* Tech Stack */}
                 <div className="flex flex-wrap gap-2 mb-4">
 
-                  {project.tech_stack?.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="bg-gray-800 px-3 py-1 text-xs rounded-full text-orange-500"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                  {project.tech_stack?.map(
+                    (tech, i) => (
+
+                      <span
+                        key={i}
+                        className="bg-gray-800 px-3 py-1 text-xs rounded-full text-orange-500"
+                      >
+                        {tech}
+                      </span>
+
+                    )
+                  )}
 
                 </div>
 
                 {/* Github */}
                 {project.github_link && (
+
                   <a
                     href={project.github_link}
                     target="_blank"
@@ -154,6 +197,7 @@ export default function Projects() {
                     <Github size={16} />
                     View Code
                   </a>
+
                 )}
 
               </div>
@@ -161,6 +205,7 @@ export default function Projects() {
             ))}
 
           </div>
+
         )}
 
       </div>
